@@ -15,7 +15,7 @@ is not a requirement to deploy a service.
 2.  Run the following command:
 
     ```bash
-    $ docker service create --replicas 1 --name helloworld alpine ping docker.com
+    $ docker service create --replicas 1 --name helloworld alpine ping google.com
 
     9uk4639qpg7npwf3fn2aasksr
     ```
@@ -32,7 +32,7 @@ is not a requirement to deploy a service.
     $ docker service ls
 
     ID            NAME        SCALE  IMAGE   COMMAND
-    9uk4639qpg7n  helloworld  1/1    alpine  ping docker.com
+    9uk4639qpg7n  helloworld  1/1    alpine  ping google.com
     ```
 
 ## What's next?
