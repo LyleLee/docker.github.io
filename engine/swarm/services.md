@@ -5,16 +5,24 @@ title: Deploy services to a swarm
 toc_max: 4
 ---
 
+Swarm服务是声明模型，声明一个任务的期望状态，有Docker去维护，这些状态包括一下信息：
+
 Swarm services use a *declarative* model, which means that you define the
 desired state of the service, and rely upon Docker to maintain this state. The
 state includes information such as (but not limited to):
 
+- 任务容器应该执行的镜像的名称，标签
 - the image name and tag the service containers should run
+- 有多少容器参与任务
 - how many containers participate in the service
+- 有没有哪些端口对swarm之外的客户端发布
 - whether any ports are exposed to clients outside the swarm
+- 是否任务在Docker启动时自动启动
 - whether the service should start automatically when Docker starts
+- 任务重启后是否需要其他动作
 - the specific behavior that happens when the service is restarted (such as
   whether a rolling restart is used)
+- 运行服的节点对资源的控制和任务接收设置
 - characteristics of the nodes where the service can run (such as resource
   constraints and placement preferences)
 

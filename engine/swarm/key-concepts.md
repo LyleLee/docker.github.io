@@ -14,6 +14,9 @@ are built using [swarmkit](https://github.com/docker/swarmkit/). Swarmkit is a
 separate project which implements Docker's orchestration layer and is used
 directly within Docker.
 
+swarm包含若干运行在swarm mode的manager节点和worker节点。docker host可以是manager，
+workder 或者两者都是。
+
 A swarm consists of multiple Docker hosts which run in **swarm mode** and act as
 managers (to manage membership and delegation) and workers (which run
 [swarm services](key-concepts.md#services-and-tasks)). A given Docker host can
