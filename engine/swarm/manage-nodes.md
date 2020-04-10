@@ -114,6 +114,8 @@ options.
 
 ### Add or remove label metadata
 
+节点标签提供了非常灵活的节点管理办法。你也可以把节点标签用于任务限制。
+
 Node labels provide a flexible method of node organization. You can also use
 node labels in service constraints. Apply constraints when you create a service
 to limit the nodes where the scheduler assigns tasks for the service.
@@ -129,6 +131,8 @@ $ docker node update --label-add foo --label-add bar=baz node-1
 
 node-1
 ```
+
+swarm中的标签和docker daemon的标签不一样
 
 The labels you set for nodes using docker node update apply only to the node
 entity within the swarm. Do not confuse them with the docker daemon labels for
@@ -204,6 +208,8 @@ the `PluginSpec` JSON defined in the `TaskTemplate`.
 
 ## Leave the swarm
 
+在节点上执行 `docker swarm leave` 命令离开swarm
+
 Run the `docker swarm leave` command on a node to remove it from the swarm.
 
 For example to leave the swarm on a worker node:
@@ -224,6 +230,8 @@ disaster recovery measures.
 
 For information about maintaining a quorum and disaster recovery, refer to the
 [Swarm administration guide](admin_guide.md).
+
+在管理节点上执行 `docker node rm` 命令移除节点。
 
 After a node leaves the swarm, you can run the `docker node rm` command on a
 manager node to remove the node from the node list.
