@@ -40,6 +40,8 @@ tutorials and command references.
 
 ## Network drivers
 
+Docker的网络只系统是可插拔的，有不同的网络驱动。 Docker自带有以下默认驱动，可以提供核心网络功能：
+
 Docker's networking subsystem is pluggable, using drivers. Several drivers
 exist by default, and provide core networking functionality:
 
@@ -82,16 +84,21 @@ exist by default, and provide core networking functionality:
 
 ### Network driver summary
 
+- **用户自定义网络** 用于定义单台Host上的多个容器通信
 - **User-defined bridge networks** are best when you need multiple containers to
   communicate on the same Docker host.
+- **主机网络** 当不需要隔离容器和主机网络栈时是最佳方案
 - **Host networks** are best when the network stack should not be isolated from
   the Docker host, but you want other aspects of the container to be isolated.
+- **Overlay 网络** 跨主机通信的最佳方案
 - **Overlay networks** are best when you need containers running on different
   Docker hosts to communicate, or when multiple applications work together using
   swarm services.
+- **macvlan 网络** 让容器拥有像主机一样的物理接口
 - **Macvlan networks** are best when you are migrating from a VM setup or
   need your containers to look like physical hosts on your network, each with a
   unique MAC address.
+- **第三方网络** 用于集成特定网络栈到容器当中
 - **Third-party network plugins** allow you to integrate Docker with specialized
   network stacks.
 

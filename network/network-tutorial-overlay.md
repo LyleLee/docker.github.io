@@ -15,19 +15,23 @@ This topic includes four different tutorials. You can run each of them on
 Linux, Windows, or a Mac, but for the last two, you need a second Docker
 host running elsewhere.
 
+- [使用默认overlay网络](#use-the-default-overlay-network) 展示了初始化或者加入swarm时，
+   docker默认设置好的overlay网络。 这个不是生产环境最好的选择
 - [Use the default overlay network](#use-the-default-overlay-network) demonstrates
   how to use the default overlay network that Docker sets up for you
   automatically when you initialize or join a swarm. This network is not the
   best choice for production systems.
-
+- [使用自定义overlay网络](#use-a-user-defined-overlay-network) 展示了如何创建自定义overlay网络。
+   这是部署服务时的推荐方式
 - [Use user-defined overlay networks](#use-a-user-defined-overlay-network) shows
   how to create and use your own custom overlay networks, to connect services.
   This is recommended for services running in production.
-
+- [孤立容器通过过overlay互联](#use-an-overlay-network-for-standalone-containers)
+   展示了不同host上的孤立容器通过overlay网络互联网
 - [Use an overlay network for standalone containers](#use-an-overlay-network-for-standalone-containers)
   shows how to communicate between standalone containers on different Docker
   daemons using an overlay network.
-
+- [容器与swarm 服务通信](#communicate-between-a-container-and-a-swarm-service) 展示了孤立容器
 - [Communicate between a container and a swarm service](#communicate-between-a-container-and-a-swarm-service)
   sets up communication between a standalone container and a swarm service,
   using an attachable overlay network. This is supported in Docker 17.06 and
