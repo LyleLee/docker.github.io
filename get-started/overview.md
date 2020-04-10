@@ -6,6 +6,7 @@ redirect_from:
 - /engine/userguide/basics/
 - /engine/introduction/understanding-docker/
 - /engine/understanding-docker/
+- /engine/docker-overview/
 title: Docker overview
 ---
 
@@ -210,7 +211,7 @@ the default registry configuration):
 
 Services allow you to scale containers across multiple Docker daemons, which
 all work together as a _swarm_ with multiple _managers_ and _workers_. Each
-member of a swarm is a Docker daemon, and the daemons all communicate using
+member of a swarm is a Docker daemon, and all the daemons communicate using
 the Docker API. A service allows you to define the desired state, such as the
 number of replicas of the service that must be available at any given time.
 By default, the service is load-balanced across all worker nodes. To
@@ -260,8 +261,6 @@ the future, Docker may support other container formats by integrating with
 technologies such as BSD Jails or Solaris Zones.
 
 ## Next steps
-- Read about [installing Docker](installation/index.md#installation).
-- Get hands-on experience with the [Getting started with Docker](getstarted/index.md)
+- Read about [installing Docker](/get-docker.md).
+- Get hands-on experience with the [Getting started with Docker](index.md)
     tutorial.
-- Check out examples and deep dive topics in the
-    [Docker Engine user guide](userguide/index.md).

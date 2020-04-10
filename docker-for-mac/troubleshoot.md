@@ -163,13 +163,13 @@ As well as on the registry. For example:
 2019/06/20 18:15:30 http: TLS handshake error from 192.168.203.139:52883: tls: first record does not look like a TLS handshake
 ```
 
-For more about using client and server side certificates, see [Adding TLS
-certificates](index.md#adding-tls-certificates) in the Getting Started topic.
+For more about using client and server side certificates, see
+[Adding TLS certificates](index.md#add-tls-certificates) in the Getting Started topic.
 
 ### Docker Desktop does not start if Mac user account and home folder are renamed after installing the app
 
-See [Do I need to reinstall Docker Desktop if I change the name of my macOS
-account?](faqs.md#do-i-need-to-reinstall-docker-for-mac-if-i-change-the-name-of-my-macos-account)
+See
+[Do I need to reinstall Docker Desktop if I change the name of my macOS account?](faqs.md#do-i-need-to-reinstall-docker-for-mac-if-i-change-the-name-of-my-macos-account)
 in the FAQs.
 
 ### Volume mounting requires file sharing for any project directories outside of `/Users`
@@ -229,8 +229,8 @@ in the Apple documentation, and Docker Desktop [Mac system requirements](install
   * If you use bash, use the following command: `unset ${!DOCKER_*}`
 
   * For other shells, unset each environment variable individually as described
-    in [Setting up to run Docker Desktop on
-    Mac](docker-toolbox.md#setting-up-to-run-docker-desktop-on-mac) in [Docker Desktop on Mac vs. Docker Toolbox](docker-toolbox.md).
+    in [Setting up to run Docker Desktop on Mac](docker-toolbox.md#setting-up-to-run-docker-desktop-on-mac)
+    in [Docker Desktop on Mac vs. Docker Toolbox](docker-toolbox.md).
 
 * Network connections fail if the macOS Firewall is set to "Block all incoming
   connections". You can enable the firewall, but `bootpd` must be allowed
@@ -255,17 +255,6 @@ in the Apple documentation, and Docker Desktop [Mac system requirements](install
 ## Known issues
 
 * IPv6 is not (yet) supported on Docker Desktop.
-
-  A workaround is provided that auto-filters out the IPv6 addresses in DNS
-  server lists and enables successful network access.  For example,
-  `2001:4860:4860::8888` would become `8.8.8.8`.  To learn more, see these
-  issues on GitHub and Docker Desktop forums:
-
-  * [Network timeout when top two DNS servers in /etc/resolv.conf are IPv6
-    addresses](https://github.com/docker/for-mac/issues/9)
-
-  * [ERROR: Network timed out while trying to connect to
-    index.docker.io](https://forums.docker.com/t/error-network-timed-out-while-trying-to-connect-to-index-docker-io/17206)
 
 * You might encounter errors when using `docker-compose up` with Docker Desktop
   (`ValueError: Extra Data`). We've identified this is likely related to data
@@ -335,8 +324,8 @@ in the Apple documentation, and Docker Desktop [Mac system requirements](install
   outside of `osxfs` mounts, and use third-party tools like Unison or `rsync` to
   synchronize between container directories and bind-mounted directories. We are
   actively working on `osxfs` performance using a number of different
-  techniques.  To learn more, see the topic on [Performance issues, solutions,
-  and roadmap](osxfs.md#performance-issues-solutions-and-roadmap).
+  techniques.  To learn more, see the topic on
+  [Performance issues, solutions, and roadmap](osxfs.md#performance-issues-solutions-and-roadmap).
 
 * If your system does not have access to an NTP server, then after a hibernate
   the time seen by Docker Desktop may be considerably out of sync with the host.

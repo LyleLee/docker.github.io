@@ -4,7 +4,7 @@ horizontalnav:
   path: /
   node: guides
 - title: Product manuals
-  path: /install/
+  path: /engine/
   node: manuals
 - title: Reference
   path: /reference/
@@ -48,74 +48,6 @@ guides:
       title: Manage images
     - path: /develop/develop-images/baseimages/
       title: Create your own base image (advanced)
-- sectiontitle: Configure networking
-  section:
-    - path: /network/
-      title: Networking overview
-    - path: /network/bridge/
-      title: Use bridge networks
-    - path: /network/overlay/
-      title: Use overlay networks
-    - path: /network/host/
-      title: Use host networking
-    - path: /network/macvlan/
-      title: Use Macvlan networks
-    - path: /network/none/
-      title: Disable networking for a container
-    - sectiontitle: Networking tutorials
-      section:
-      - path: /network/network-tutorial-standalone/
-        title: Bridge network tutorial
-      - path: /network/network-tutorial-host/
-        title: Host networking tutorial
-      - path: /network/network-tutorial-overlay/
-        title: Overlay networking tutorial
-      - path: /network/network-tutorial-macvlan/
-        title: Macvlan network tutorial
-    - sectiontitle: Configure the daemon and containers
-      section:
-      - path: /config/daemon/ipv6/
-        title: Configure the daemon for IPv6
-      - path: /network/iptables/
-        title: Docker and iptables
-      - path: /config/containers/container-networking/
-        title: Container networking
-      - path: /network/proxy/
-        title: Configure Docker to use a proxy server
-    - sectiontitle: Legacy networking content
-      section:
-      - path: /network/links/
-        title: (Legacy) Container links
-- sectiontitle: Manage application data
-  section:
-    - path: /storage/
-      title: Storage overview
-    - path: /storage/volumes/
-      title: Volumes
-    - path: /storage/bind-mounts/
-      title: Bind mounts
-    - path: /storage/tmpfs/
-      title: tmpfs mounts
-    - path: /storage/troubleshooting_volume_errors/
-      title: Troubleshoot volume problems
-    - sectiontitle: Store data within containers
-      section:
-      - path: /storage/storagedriver/
-        title: About storage drivers
-      - path: /storage/storagedriver/select-storage-driver/
-        title: Select a storage driver
-      - path: /storage/storagedriver/aufs-driver/
-        title: Use the AUFS storage driver
-      - path: /storage/storagedriver/btrfs-driver/
-        title: Use the Btrfs storage driver
-      - path: /storage/storagedriver/device-mapper-driver/
-        title: Use the Device mapper storage driver
-      - path: /storage/storagedriver/overlayfs-driver/
-        title: Use the OverlayFS storage driver
-      - path: /storage/storagedriver/zfs-driver/
-        title: Use the ZFS storage driver
-      - path: /storage/storagedriver/vfs-driver/
-        title: Use the VFS storage driver
 - sectiontitle: Run your app in production
   section:
   - sectiontitle: Orchestration
@@ -295,7 +227,75 @@ guides:
       - title: Plugin configuration
         path: /engine/extend/config/
       - path: /engine/extend/plugin_api/
-        title: Plugins API
+        title: Plugins
+  - sectiontitle: Configure networking
+    section:
+    - path: /network/
+      title: Networking overview
+    - path: /network/bridge/
+      title: Use bridge networks
+    - path: /network/overlay/
+      title: Use overlay networks
+    - path: /network/host/
+      title: Use host networking
+    - path: /network/macvlan/
+      title: Use Macvlan networks
+    - path: /network/none/
+      title: Disable networking for a container
+    - sectiontitle: Networking tutorials
+      section:
+      - path: /network/network-tutorial-standalone/
+        title: Bridge network tutorial
+      - path: /network/network-tutorial-host/
+        title: Host networking tutorial
+      - path: /network/network-tutorial-overlay/
+        title: Overlay networking tutorial
+      - path: /network/network-tutorial-macvlan/
+        title: Macvlan network tutorial
+    - sectiontitle: Configure the daemon and containers
+      section:
+      - path: /config/daemon/ipv6/
+        title: Configure the daemon for IPv6
+      - path: /network/iptables/
+        title: Docker and iptables
+      - path: /config/containers/container-networking/
+        title: Container networking
+      - path: /network/proxy/
+        title: Configure Docker to use a proxy server
+    - sectiontitle: Legacy networking content
+      section:
+      - path: /network/links/
+        title: (Legacy) Container links
+  - sectiontitle: Manage application data
+    section:
+    - path: /storage/
+      title: Storage overview
+    - path: /storage/volumes/
+      title: Volumes
+    - path: /storage/bind-mounts/
+      title: Bind mounts
+    - path: /storage/tmpfs/
+      title: tmpfs mounts
+    - path: /storage/troubleshooting_volume_errors/
+      title: Troubleshoot volume problems
+    - sectiontitle: Store data within containers
+      section:
+      - path: /storage/storagedriver/
+        title: About storage drivers
+      - path: /storage/storagedriver/select-storage-driver/
+        title: Select a storage driver
+      - path: /storage/storagedriver/aufs-driver/
+        title: Use the AUFS storage driver
+      - path: /storage/storagedriver/btrfs-driver/
+        title: Use the Btrfs storage driver
+      - path: /storage/storagedriver/device-mapper-driver/
+        title: Use the Device mapper storage driver
+      - path: /storage/storagedriver/overlayfs-driver/
+        title: Use the OverlayFS storage driver
+      - path: /storage/storagedriver/zfs-driver/
+        title: Use the ZFS storage driver
+      - path: /storage/storagedriver/vfs-driver/
+        title: Use the VFS storage driver
 - sectiontitle: Open source at Docker
   section:
   - path: /opensource/
@@ -822,51 +822,51 @@ reference:
     - path: /compose/completion/
       title: Command-line completion
     - path: /compose/reference/build/
-      title: build
+      title: docker-compose build
     - path: /compose/reference/config/
-      title: config
+      title: docker-compose config
     - path: /compose/reference/create/
-      title: create
+      title: docker-compose create
     - path: /compose/reference/down/
-      title: down
+      title: docker-compose down
     - path: /compose/reference/events/
-      title: events
+      title: docker-compose events
     - path: /compose/reference/exec/
-      title: exec
+      title: docker-compose exec
     - path: /compose/reference/help/
-      title: help
+      title: docker-compose help
     - path: /compose/reference/kill/
-      title: kill
+      title: docker-compose kill
     - path: /compose/reference/logs/
-      title: logs
+      title: docker-compose logs
     - path: /compose/reference/pause/
-      title: pause
+      title: docker-compose pause
     - path: /compose/reference/port/
-      title: port
+      title: docker-compose port
     - path: /compose/reference/ps/
-      title: ps
+      title: docker-compose ps
     - path: /compose/reference/pull/
-      title: pull
+      title: docker-compose pull
     - path: /compose/reference/push/
-      title: push
+      title: docker-compose push
     - path: /compose/reference/restart/
-      title: restart
+      title: docker-compose restart
     - path: /compose/reference/rm/
-      title: rm
+      title: docker-compose rm
     - path: /compose/reference/run/
-      title: run
+      title: docker-compose run
     - path: /compose/reference/scale/
-      title: scale
+      title: docker-compose scale
     - path: /compose/reference/start/
-      title: start
+      title: docker-compose start
     - path: /compose/reference/stop/
-      title: stop
+      title: docker-compose stop
     - path: /compose/reference/top/
-      title: top
+      title: docker-compose top
     - path: /compose/reference/unpause/
-      title: unpause
+      title: docker-compose unpause
     - path: /compose/reference/up/
-      title: up
+      title: docker-compose up
   - title: Daemon CLI (dockerd)
     path: /engine/reference/commandline/dockerd/
 - sectiontitle: API reference
@@ -1023,22 +1023,24 @@ samples:
 manuals:
 - sectiontitle: Docker Engine
   section:
-  - path: /install/
+  - path: /engine/
     title: Overview
-  - sectiontitle: Linux
+  - path: /engine/install/
+    title: Install
+  - sectiontitle: Installation per distro
     section:
-    - path: /install/linux/docker-ce/centos/
-      title: CentOS
-    - path: /install/linux/docker-ce/debian/
-      title: Debian
-    - path: /install/linux/docker-ce/fedora/
-      title: Fedora
-    - path: /install/linux/docker-ce/ubuntu/
-      title: Ubuntu
-    - path: /install/linux/docker-ce/binaries/
-      title: Binaries
-    - path: /install/linux/linux-postinstall/
-      title: Optional Linux post-installation steps
+    - path: /engine/install/centos/
+      title: Install on CentOS
+    - path: /engine/install/debian/
+      title: Install on Debian
+    - path: /engine/install/fedora/
+      title: Install on Fedora
+    - path: /engine/install/ubuntu/
+      title: Install on Ubuntu
+    - path: /engine/install/binaries/
+      title: Install binaries
+    - path: /engine/install/linux-postinstall/
+      title: Optional post-installation steps
   - path: /engine/release-notes/
     title: Release notes
   - sectiontitle: Previous versions
@@ -1077,6 +1079,9 @@ manuals:
       title: Engine 17.03 release notes
     - path: /engine/release-notes/prior-releases/
       title: Engine 1.13 and earlier
+  - path: /engine/deprecated/
+    title: Deprecated features
+
   - path: /app/working-with-app/
     title: Docker App
   - path: /buildx/working-with-buildx/
@@ -1111,64 +1116,66 @@ manuals:
     title: Sample apps with Compose
   - path: /release-notes/docker-compose/
     title: Docker Compose release notes
-- sectiontitle: Docker Desktop for Mac
+- sectiontitle: Docker Desktop
   section:
-  - path: /docker-for-mac/
-    title: Getting started
-  - path: /docker-for-mac/install/
-    title: Install Docker Desktop for Mac
-  - path: /docker-for-mac/dashboard/
-    title: Dashboard
-  - path: /docker-for-mac/kubernetes/
-    title: Deploy on Kubernetes
-  - path: /docker-for-mac/docker-toolbox/
-    title: Docker Desktop for Mac vs. Docker Toolbox
-  - path: /docker-for-mac/multi-arch/
-    title: Leveraging Multi-CPU architecture support
-  - path: /docker-for-mac/networking/
-    title: Networking
-  - path: /docker-for-mac/osxfs/
-    title: File system sharing
-  - path: /docker-for-mac/osxfs-caching/
-    title: Performance tuning for volume mounts (shared filesystems)
-  - path: /docker-for-mac/space/
-    title: Disk utilization
-  - path: /docker-for-mac/troubleshoot/
-    title: Logs and troubleshooting
-  - path: /docker-for-mac/faqs/
-    title: FAQs
-  - path: /docker-for-mac/opensource/
-    title: Open source licensing
-  - path: /docker-for-mac/release-notes/
-    title: Stable release notes
-  - path: /docker-for-mac/edge-release-notes/
-    title: Edge release notes
-- sectiontitle: Docker Desktop for Windows
-  section:
-  - path: /docker-for-windows/
-    title: Getting started
-  - path: /docker-for-windows/install/
-    title: Install Docker Desktop for Windows
-  - path: /docker-for-windows/dashboard/
-    title: Dashboard
-  - path: /docker-for-windows/kubernetes/
-    title: Deploy on Kubernetes
-  - path: /docker-for-windows/networking/
-    title: Networking
-  - path: /docker-for-windows/docker-toolbox/
-    title: Migrate Docker Toolbox
-  - path: /docker-for-windows/troubleshoot/
-    title: Logs and troubleshooting
-  - path: /docker-for-windows/faqs/
-    title: FAQs
-  - path: /docker-for-windows/opensource/
-    title: Open source licensing
-  - path: /docker-for-windows/release-notes/
-    title: Stable release notes
-  - path: /docker-for-windows/edge-release-notes/
-    title: Edge release notes
-  - path: /docker-for-windows/wsl-tech-preview/
-    title: Docker Desktop WSL 2 backend
+  - sectiontitle: Mac
+    section:
+    - path: /docker-for-mac/
+      title: Getting started
+    - path: /docker-for-mac/install/
+      title: Install Docker Desktop for Mac
+    - path: /docker-for-mac/dashboard/
+      title: Dashboard
+    - path: /docker-for-mac/kubernetes/
+      title: Deploy on Kubernetes
+    - path: /docker-for-mac/docker-toolbox/
+      title: Docker Desktop for Mac vs. Docker Toolbox
+    - path: /docker-for-mac/multi-arch/
+      title: Leveraging Multi-CPU architecture support
+    - path: /docker-for-mac/networking/
+      title: Networking
+    - path: /docker-for-mac/osxfs/
+      title: File system sharing
+    - path: /docker-for-mac/osxfs-caching/
+      title: Performance tuning for volume mounts (shared filesystems)
+    - path: /docker-for-mac/space/
+      title: Disk utilization
+    - path: /docker-for-mac/troubleshoot/
+      title: Logs and troubleshooting
+    - path: /docker-for-mac/faqs/
+      title: FAQs
+    - path: /docker-for-mac/opensource/
+      title: Open source licensing
+    - path: /docker-for-mac/release-notes/
+      title: Stable release notes
+    - path: /docker-for-mac/edge-release-notes/
+      title: Edge release notes
+  - sectiontitle: Windows
+    section:
+    - path: /docker-for-windows/
+      title: Getting started
+    - path: /docker-for-windows/install/
+      title: Install Docker Desktop for Windows
+    - path: /docker-for-windows/dashboard/
+      title: Dashboard
+    - path: /docker-for-windows/kubernetes/
+      title: Deploy on Kubernetes
+    - path: /docker-for-windows/networking/
+      title: Networking
+    - path: /docker-for-windows/docker-toolbox/
+      title: Migrate Docker Toolbox
+    - path: /docker-for-windows/troubleshoot/
+      title: Logs and troubleshooting
+    - path: /docker-for-windows/faqs/
+      title: FAQs
+    - path: /docker-for-windows/opensource/
+      title: Open source licensing
+    - path: /docker-for-windows/release-notes/
+      title: Stable release notes
+    - path: /docker-for-windows/edge-release-notes/
+      title: Edge release notes
+    - path: /docker-for-windows/wsl-tech-preview/
+      title: Docker Desktop WSL 2 backend
 - sectiontitle: Docker Hub
   section:
   - path: /docker-hub/

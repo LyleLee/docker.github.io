@@ -98,9 +98,9 @@ As well as on the registry. For example:
 2017/06/20 18:15:30 http: TLS handshake error from 192.168.203.139:52883: tls: first record does not look like a TLS handshake
 ```
 
-For more about using client and server side certificates, see [How do I add
-custom CA certificates?](index.md#how-do-i-add-custom-ca certificates) and [How
-do I add client certificates?](index.md#how-do-i-add-client-certificates) in the
+For more about using client and server side certificates, see
+[How do I add custom CA certificates?](index.md#how-do-i-add-custom-ca-certificates)
+and [How do I add client certificates?](index.md#how-do-i-add-client-certificates) in the
 Getting Started topic.
 
 ### Volumes
@@ -117,9 +117,8 @@ volume defaults at container runtime, you need to either use non-host-mounted
 volumes or find a way to make the applications work with the default file
 permissions.
 
-See also, [Can I change permissions on shared volumes for container-specific
-deployment
-requirements?](faqs.md#can-i-change-permissions-on-shared-volumes-for-container-specific-deployment-requirements)
+See also,
+[Can I change permissions on shared volumes for container-specific deployment requirements?](faqs.md#can-i-change-permissions-on-shared-volumes-for-container-specific-deployment-requirements)
 in the FAQs.
 
 #### Volume mounting requires shared drives for Linux containers
@@ -158,12 +157,12 @@ script](https://github.com/moby/moby/issues/24388).
 
 ### Virtualization
 
-For Docker Desktop to function correctly, your machine must have the following features:
+ Your machine must have the following features for Docker Desktop to function correctly:
 
 1. [Hyper-V](https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/hyper-v-technology-overview)
    installed and working
 
-2. Virtualization enabled
+2. Virtualization enabled in the BIOS
 
 #### Hyper-V
 
@@ -183,22 +182,21 @@ In the subsequent screen, verify that Hyper-V is enabled:
 #### Hyper-V driver for Docker Machine
 
 The Docker Desktop installation includes the legacy tool Docker Machine which uses the old
-[`boot2docker.iso`](https://github.com/boot2docker/boot2docker){:
-target="_blank" class="_"}, and the [Microsoft Hyper-V
-driver](/machine/drivers/hyper-v.md) to create local virtual machines. _This is
-tangential to using Docker Desktop_, but if you want to use Docker Machine
-to create multiple local Virtual Machines (VMs), or to provision remote machines, see the [Docker
-Machine](/machine/index.md) topics. This is documented only for users looking for information about Docker Machine on Windows, which requires that Hyper-V is enabled, an external network switch is active, and referenced in the flags for the `docker-machine create` command [as described in the Docker
-Machine driver example](/machine/drivers/hyper-v.md#example).
+[`boot2docker.iso`](https://github.com/boot2docker/boot2docker){:target="_blank" class="_"},
+and the [Microsoft Hyper-V driver](/machine/drivers/hyper-v.md) to create local
+virtual machines. _This is tangential to using Docker Desktop_, but if you want to use Docker Machine
+to create multiple local Virtual Machines (VMs), or to provision remote machines, see the
+[Docker Machine](/machine/index.md) topics. This is documented only for users looking for information about Docker Machine on Windows, which requires that Hyper-V is enabled, an external network switch is active, and referenced in the flags for the `docker-machine create` command
+as described in the [Docker Machine driver example](/machine/drivers/hyper-v.md#example).
 
 #### Virtualization must be enabled
 
-In addition to [Hyper-V](#hyper-v), virtualization must be enabled. Check the
+In addition to [Hyper-V](#hyper-v) or [WSL 2](/docker-for-windows/wsl-tech-preview.md), virtualization must be enabled. Check the
 Performance tab on the Task Manager:
 
 ![Task Manager](images/virtualization-enabled.png){:width="700px"}
 
-If you manually uninstall Hyper-V or disable virtualization,
+If you manually uninstall Hyper-V, WSL 2 or disable virtualization,
 Docker Desktop cannot start. See [Unable to run Docker for Windows on
 Windows 10 Enterprise](https://github.com/docker/for-win/issues/74).
 
@@ -225,14 +223,14 @@ Here are some steps to take if you experience similar problems:
 
     ![Hyper-V manager](images/hyperv-manager.png)
 
-4.  Set up an external network switch. If you plan at any point to use [Docker
-    Machine](/machine/overview.md) to set up multiple local VMs, you need this
-    anyway, as described in the topic on the [Hyper-V driver for Docker
-    Machine](/machine/drivers/hyper-v.md#example). You can replace `DockerNAT`
-    with this switch.
+4.  Set up an external network switch. If you plan at any point to use
+    [Docker Machine](/machine/overview.md) to set up multiple local VMs, you
+    need this anyway, as described in the topic on the
+    [Hyper-V driver for Docker Machine](/machine/drivers/hyper-v.md#example).
+    You can replace `DockerNAT` with this switch.
 
-5.  If previous steps fail to solve the problems, follow steps on the [Cleanup
-    README](https://github.com/Microsoft/Virtualization-Documentation/blob/master/windows-server-container-tools/CleanupContainerHostNetworking/README.md).
+5.  If previous steps fail to solve the problems, follow steps on the
+    [Cleanup README](https://github.com/Microsoft/Virtualization-Documentation/blob/master/windows-server-container-tools/CleanupContainerHostNetworking/README.md).
 
     > Read the full description before you run the Windows cleanup script.
     >
@@ -246,12 +244,10 @@ Docker Desktop is not supported on Windows Server. Instead, you can use
 [Docker Enterprise Basic](/ee/index.md) at no additional cost.
 
 If you have questions about how to run Windows containers on Windows 10, see
-[Switch between Windows and Linux
-containers](index.md#switch-between-windows-and-linux-containers).
+[Switch between Windows and Linux containers](index.md#switch-between-windows-and-linux-containers).
 
 A full tutorial is available in [docker/labs](https://github.com/docker/labs) at
-[Getting Started with Windows
-Containers](https://github.com/docker/labs/blob/master/windows/windows-containers/README.md).
+[Getting Started with Windows Containers](https://github.com/docker/labs/blob/master/windows/windows-containers/README.md).
 
 You can install a native Windows binary which allows you to develop and run
 Windows containers without Docker Desktop. However, if you install Docker this way, you cannot develop or run Linux containers. If you try to run a Linux container on the native Docker daemon, an error occurs:
@@ -288,8 +284,7 @@ Linux containers).
 To reach a Windows container from the local host, you need to specify the IP
 address and port for the container that is running the service.
 
-You can get the container IP address by using [`docker
-inspect`](/engine/reference/commandline/inspect.md) with some `--format` options
+You can get the container IP address by using [`docker inspect`](/engine/reference/commandline/inspect.md) with some `--format` options
 and the ID or name of the container. For the example above, the command would
 look like this, using the name we gave to the container (`webserver`) instead of
 the container ID:
@@ -379,6 +374,8 @@ Discussion thread on GitHub at [Docker for Windows issue
 267](https://github.com/docker/for-win/issues/267).
 
 ### Networking issues
+
+IPv6 is not (yet) supported on Docker Desktop.
 
 Some users have reported problems connecting to Docker Hub on the Docker Desktop stable version. (See GitHub issue
 [22567](https://github.com/moby/moby/issues/22567).)

@@ -43,9 +43,9 @@ production servers in the cloud. Total reading time is less than an hour.
         <div class="col-sm-12 col-md-12 col-lg-4 block">
             <div class="component">
                 <div class="component-icon">
-                    <a href="install/linux/ubuntu/"> <img src="../images/linux_48.svg" alt="Docker for Linux"> </a>
+                    <a href="engine/install/"> <img src="../images/linux_48.svg" alt="Docker for Linux"> </a>
                 </div>
-                <h3 id="docker-for-linux"><a href="install/linux/ubuntu/">Docker for Linux</a></h3>
+                <h3 id="docker-for-linux"><a href="engine/install/">Docker for Linux</a></h3>
                 <p>Install Docker on a computer which already has a Linux distribution installed.</p>
             </div>
         </div>
@@ -63,7 +63,7 @@ containers and automate the development pipeline from a single environment.
 Choose the Edge channel to get access to the latest features, or the Stable
 channel for more predictability.
 
-[Learn more about Docker Engine - Community](/install/){: class="button outline-btn"}
+[Learn more about Docker Engine - Community](/engine/index.md){: class="button outline-btn"}
 
 </div>
 <div markdown="1" class="col-xs-12 col-sm-12 col-md-12 col-lg-6 block">

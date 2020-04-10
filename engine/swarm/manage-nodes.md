@@ -136,7 +136,7 @@ swarm中的标签和docker daemon的标签不一样
 
 The labels you set for nodes using docker node update apply only to the node
 entity within the swarm. Do not confuse them with the docker daemon labels for
-[dockerd](../userguide/labels-custom-metadata.md#daemon-labels).
+[dockerd](/config/labels-custom-metadata.md#daemon-labels).
 
 Therefore, node labels can be used to limit critical tasks to nodes that meet
 certain requirements. For example, schedule only on machines where special
