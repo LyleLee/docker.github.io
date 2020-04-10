@@ -219,6 +219,8 @@ one of those commands with the `--help` flag.
 
 ### Configure the runtime environment
 
+可以为任务设置容器中的运行时环境变量
+
 You can configure the following options for the runtime environment in the
 container:
 
@@ -585,13 +587,17 @@ the `--isolation` flag.
 
 ### Control service placement
 
+Swarm提供多种控制任务分配的方法
+
 Swarm services provide a few different ways for you to control scale and
 placement of services on different nodes.
 
+- 你可以设置任务副本数量或者是否需要在每个节点上运行
 - You can specify whether the service needs to run a specific number of replicas
   or should run globally on every worker node. See
   [Replicated or global services](#replicated-or-global-services).
 
+- 你可以设置任务的CPU和内存需求， 这些任务会只运行在能满足需求的节点上
 - You can configure the service's
   [CPU or memory requirements](#reserve-memory-or-cpus-for-a-service), and the
   service only runs on nodes which can meet those requirements.
